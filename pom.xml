@@ -1,10 +1,9 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.openmrs.distro</groupId>
 	<artifactId>platform</artifactId>
-	<version>2.5.0-SNAPSHOT</version>
+	<version>2.1.5-SNAPSHOT</version>
 	<packaging>jar</packaging>
 	<name>OpenMRS Platform</name>
 	<description>A project for packaging the OpenMRS Platform</description>
@@ -31,23 +30,161 @@
         <connection>scm:git:git@github.com:openmrs/openmrs-distro-platform.git</connection>
         <developerConnection>scm:git:git@github.com:openmrs/openmrs-distro-platform.git</developerConnection>
         <url>https://github.com/openmrs/openmrs-distro-platform</url>
-    </scm>
+      <tag>HEAD</tag>
+  </scm>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<openmrsPlatformVersion>${project.version}</openmrsPlatformVersion>
-		<webservices.restVersion>2.29.0</webservices.restVersion>
-		<owaVersion>1.12.0</owaVersion>
-		<fhirVersion>1.2.1</fhirVersion>
-		<addonManagerVersion>1.1.0</addonManagerVersion>
+		<addresshierarchyVersion>2.9</addresshierarchyVersion>
+		<appframeworkVersion>2.10.0</appframeworkVersion>
+		<appointmentsVersion>1.3.0-SNAPSHOT</appointmentsVersion>
+		<auditlogVersion>1.1-SNAPSHOT</auditlogVersion>
+		<bacteriologyVersion>1.2.0</bacteriologyVersion>
+		<bahmni.ie.appsVersion>1.1.0</bahmni.ie.appsVersion>
+		<bahmnicoreVersion>0.93-SNAPSHOT</bahmnicoreVersion>
+		<bedmanagementVersion>5.11.0</bedmanagementVersion>
+		<calculationVersion>1.2</calculationVersion>
+		<email-notificationVersion>1.0.0-SNAPSHOT</email-notificationVersion>
+		<emrapiVersion>1.32.0-SNAPSHOT</emrapiVersion>
+		<episodesVersion>1.0-SNAPSHOT</episodesVersion>
+		<eventVersion>2.8.0</eventVersion>
+		<htmlwidgetsVersion>1.8.0</htmlwidgetsVersion>
+		<idgenVersion>4.4.1</idgenVersion>
+		<idgen-webservicesVersion>1.2-SNAPSHOT</idgen-webservicesVersion>
+		<legacyuiVersion>1.3.3</legacyuiVersion>
+		<metadatamappingVersion>1.3.1</metadatamappingVersion>
+		<metadatasharingVersion>1.2.2</metadatasharingVersion>
+		<owaVersion>1.9.0</owaVersion>
+		<openmrs-atomfeedVersion>2.5.6</openmrs-atomfeedVersion>
+		<operationtheaterVersion>1.2.1</operationtheaterVersion>
+		<providermanagementVersion>2.5.0</providermanagementVersion>
+		<reference-dataVersion>0.93-SNAPSHOT</reference-dataVersion>
+		<reportingVersion>1.16.0</reportingVersion>
+		<reportingrestVersion>1.10.0</reportingrestVersion>
+		<rulesengineVersion>0.92-SNAPSHOT</rulesengineVersion>
+		<serialization.xstreamVersion>0.2.12</serialization.xstreamVersion>
+		<uicommonsVersion>2.0</uicommonsVersion>
+		<uiframeworkVersion>3.8</uiframeworkVersion>
+		<uilibraryVersion>2.0.5</uilibraryVersion>
+
+		<webservices.restVersion>2.24.0</webservices.restVersion>
 	</properties>
 
 	<dependencyManagement>
 		<dependencies>
 			<dependency>
 				<groupId>org.openmrs.module</groupId>
-				<artifactId>webservices-rest</artifactId>
-				<version>${webservices.restVersion}</version>
+				<artifactId>addresshierarchy</artifactId>
+				<version>${addresshierarchyVersion}</version>
+				<type>jar</type>
+			</dependency>
+			<dependency>
+				<groupId>org.openmrs.module</groupId>
+				<artifactId>appframework</artifactId>
+				<version>${appframeworkVersion}</version>
+				<type>jar</type>
+			</dependency>
+			<dependency>
+				<groupId>org.bahmni.module</groupId>
+				<artifactId>appointments-omod</artifactId>
+				<version>${appointmentsVersion}</version>
+				<type>jar</type>
+			</dependency>
+			<dependency>
+				<groupId>org.openmrs.module</groupId>
+				<artifactId>auditlog</artifactId>
+				<version>${auditlogVersion}</version>
+				<type>jar</type>
+			</dependency>
+			<dependency>
+				<groupId>org.openmrs.module</groupId>
+				<artifactId>bacteriology</artifactId>
+				<version>${bacteriologyVersion}</version>
+				<type>jar</type>
+			</dependency>
+			<dependency>
+				<groupId>org.bahmni.module</groupId>
+				<artifactId>bahmni.ie.apps</artifactId>
+				<version>${bahmni.ie.appsVersion}</version>
+				<type>jar</type>
+			</dependency>
+			<!-- <dependency>
+				<groupId>org.openmrs.module</groupId>
+				<artifactId>bahmnicore</artifactId>
+				<version>${bahmnicoreVersion}</version>
+				<type>jar</type>
+			</dependency> -->
+			<dependency>
+				<groupId>org.openmrs.module</groupId>
+				<artifactId>bedmanagement</artifactId>
+				<version>${bedmanagementVersion}</version>
+				<type>jar</type>
+			</dependency>
+			<dependency>
+				<groupId>org.openmrs.module</groupId>
+				<artifactId>calculation</artifactId>
+				<version>${calculationVersion}</version>
+				<type>jar</type>
+			</dependency>
+			<dependency>
+				<groupId>org.bahmni.module</groupId>
+				<artifactId>email-notification</artifactId>
+				<version>${email-notificationVersion}</version>
+				<type>jar</type>
+			</dependency>
+			<dependency>
+				<groupId>org.openmrs.module</groupId>
+				<artifactId>emrapi</artifactId>
+				<version>${emrapiVersion}</version>
+				<type>jar</type>
+			</dependency>
+			<dependency>
+				<groupId>org.openmrs.module</groupId>
+				<artifactId>episodes</artifactId>
+				<version>${episodesVersion}</version>
+				<type>jar</type>
+			</dependency>
+			<dependency>
+				<groupId>org.openmrs</groupId>
+				<artifactId>event-omod</artifactId>
+				<version>${eventVersion}</version>
+				<type>jar</type>
+			</dependency>
+			<dependency>
+				<groupId>org.openmrs.module</groupId>
+				<artifactId>htmlwidgets</artifactId>
+				<version>${htmlwidgetsVersion}</version>
+				<type>jar</type>
+			</dependency>
+			<dependency>
+				<groupId>org.openmrs.module</groupId>
+				<artifactId>idgen</artifactId>
+				<version>${idgenVersion}</version>
+				<type>jar</type>
+			</dependency>
+			<dependency>
+				<groupId>org.openmrs.module</groupId>
+				<artifactId>idgen-webservices</artifactId>
+				<version>${idgen-webservicesVersion}</version>
+				<type>jar</type>
+			</dependency>
+			<dependency>
+				<groupId>org.openmrs.module</groupId>
+				<artifactId>legacyui</artifactId>
+				<version>${legacyuiVersion}</version>
+				<type>jar</type>
+			</dependency>
+			<dependency>
+				<groupId>org.openmrs.module</groupId>
+				<artifactId>metadatamapping</artifactId>
+				<version>${metadatamappingVersion}</version>
+				<type>jar</type>
+			</dependency>
+			<dependency>
+				<groupId>org.openmrs.module</groupId>
+				<artifactId>metadatasharing</artifactId>
+				<version>${metadatasharingVersion}</version>
 				<type>jar</type>
 			</dependency>
 			<dependency>
@@ -57,9 +194,75 @@
 				<type>jar</type>
 			</dependency>
 			<dependency>
+				<groupId>org.ict4h.openmrs</groupId>
+				<artifactId>openmrs-atomfeed-omod</artifactId>
+				<version>${openmrs-atomfeedVersion}</version>
+				<type>jar</type>
+			</dependency>
+			<dependency>
 				<groupId>org.openmrs.module</groupId>
-				<artifactId>fhir2</artifactId>
-				<version>${fhirVersion}</version>
+				<artifactId>operationtheater</artifactId>
+				<version>${operationtheaterVersion}</version>
+				<type>jar</type>
+			</dependency>
+			<dependency>
+				<groupId>org.openmrs.module</groupId>
+				<artifactId>providermanagement</artifactId>
+				<version>${providermanagementVersion}</version>
+				<type>jar</type>
+			</dependency>
+			<dependency>
+				<groupId>org.bahmni.module</groupId>
+				<artifactId>reference-data</artifactId>
+				<version>${reference-dataVersion}</version>
+				<type>jar</type>
+			</dependency>
+			<dependency>
+				<groupId>org.openmrs.module</groupId>
+				<artifactId>reporting</artifactId>
+				<version>${reportingVersion}</version>
+				<type>jar</type>
+			</dependency>
+			<dependency>
+				<groupId>org.openmrs.module</groupId>
+				<artifactId>reportingrest</artifactId>
+				<version>${reportingrestVersion}</version>
+				<type>jar</type>
+			</dependency>
+			<dependency>
+				<groupId>org.openmrs.module</groupId>
+				<artifactId>rulesengine</artifactId>
+				<version>${rulesengineVersion}</version>
+				<type>jar</type>
+			</dependency>
+			<dependency>
+				<groupId>org.openmrs.module</groupId>
+				<artifactId>serialization.xstream</artifactId>
+				<version>${serialization.xstreamVersion}</version>
+				<type>omod</type>
+			</dependency>
+			<dependency>
+				<groupId>org.openmrs.module</groupId>
+				<artifactId>uicommons</artifactId>
+				<version>${uicommonsVersion}</version>
+				<type>jar</type>
+			</dependency>
+			<dependency>
+				<groupId>org.openmrs.module</groupId>
+				<artifactId>uiframework</artifactId>
+				<version>${uiframeworkVersion}</version>
+				<type>jar</type>
+			</dependency>
+			<dependency>
+				<groupId>org.openmrs.module</groupId>
+				<artifactId>uilibrary</artifactId>
+				<version>${uilibraryVersion}</version>
+				<type>jar</type>
+			</dependency>
+			<dependency>
+				<groupId>org.openmrs.module</groupId>
+				<artifactId>webservices-rest</artifactId>
+				<version>${webservices.restVersion}</version>
 				<type>jar</type>
 			</dependency>
 		</dependencies>
@@ -81,7 +284,7 @@
 			<plugin>
 				<groupId>org.openmrs.maven.plugins</groupId>
 				<artifactId>openmrs-sdk-maven-plugin</artifactId>
-				<version>4.0.0</version>
+				<version>4.0.1</version>
 				<executions>
 					<execution>
 						<id>build-distro</id>
