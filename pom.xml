@@ -1,156 +1,203 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
-	<modelVersion>4.0.0</modelVersion>
-	<groupId>org.openmrs.distro</groupId>
-	<artifactId>platform</artifactId>
-	<version>2.5.0-SNAPSHOT</version>
-	<packaging>jar</packaging>
-	<name>OpenMRS Platform</name>
-	<description>A project for packaging the OpenMRS Platform</description>
-	<url>http://openmrs.org</url>
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>org.openmrs.distro</groupId>
+  <artifactId>bahmni</artifactId>
+  <version>0.94-SNAPSHOT</version>
+  <packaging>jar</packaging>
+  <name>Bahmni OpenMRS Distribution</name>
+  <description>A project for packaging the OpenMRS Bahmni Platform</description>
+  <url>http://openmrs.org</url>
 
-	<issueManagement>
-		<system>JIRA</system>
-		<url>http://tickets.openmrs.org/</url>
-	</issueManagement>
+  <issueManagement>
+    <system>JIRA</system>
+    <url>http://tickets.openmrs.org/</url>
+  </issueManagement>
 
-	<licenses>
-		<license>
-			<name>OpenMRS Public License</name>
-			<url>http://openmrs.org/wiki/License</url>
-		</license>
-	</licenses>
+  <licenses>
+    <license>
+      <name>OpenMRS Public License</name>
+      <url>http://openmrs.org/wiki/License</url>
+    </license>
+  </licenses>
 
-	<organization>
-		<name>OpenMRS LLC.</name>
-		<url>http://openmrs.org</url>
-	</organization>
+  <organization>
+    <name>OpenMRS LLC.</name>
+    <url>http://openmrs.org</url>
+  </organization>
 
-    <scm>
-        <connection>scm:git:git@github.com:openmrs/openmrs-distro-platform.git</connection>
-        <developerConnection>scm:git:git@github.com:openmrs/openmrs-distro-platform.git</developerConnection>
-        <url>https://github.com/openmrs/openmrs-distro-platform</url>
-    </scm>
+  <scm>
+    <connection>scm:git:git@github.com:openmrs/openmrs-distro-platform.git</connection>
+    <developerConnection>scm:git:git@github.com:openmrs/openmrs-distro-platform.git
+    </developerConnection>
+    <url>https://github.com/openmrs/openmrs-distro-platform</url>
+  </scm>
 
-	<properties>
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<openmrsPlatformVersion>${project.version}</openmrsPlatformVersion>
-		<webservices.restVersion>2.29.0</webservices.restVersion>
-		<owaVersion>1.12.0</owaVersion>
-		<fhirVersion>1.2.1</fhirVersion>
-		<addonManagerVersion>1.1.0</addonManagerVersion>
-	</properties>
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <openmrsPlatformVersion>2.1.3</openmrsPlatformVersion>
+    <webservices.restVersion>2.24.0</webservices.restVersion>
+    <owaVersion>1.9.0</owaVersion>
+    <fhirVersion>1.2.1</fhirVersion>
+		<addressHierarchyVersion>2.9</addressHierarchyVersion>
+		<appframeworkModuleVersion>2.10.0</appframeworkModuleVersion>
+		<atomfeedModuleVersion>2.5.6</atomfeedModuleVersion>
+		<bacteriologyVersion>1.2.0</bacteriologyVersion>
+		<auditLogVersion>1.1-SNAPSHOT</auditLogVersion>
+		<bahmniCoreVersion>0.93-SNAPSHOT</bahmniCoreVersion>
+		<bedManagementVersion>5.11.0</bedManagementVersion>
+		<calculationVersion>1.2</calculationVersion>
+		<emrapiModuleVersion>1.24.8</emrapiModuleVersion>
+		<episodesVersion>1.0-SNAPSHOT</episodesVersion>
+		<eventModuleVersion>2.8.0</eventModuleVersion>
+		<owaVersion>1.9.0</owaVersion>
+		<htmlwidgetsVersion>1.8.0</htmlwidgetsVersion>
+		<idgenModuleVersion>4.4.1</idgenModuleVersion>
+		<idgenWebServicesModuleVersion>1.2-SNAPSHOT</idgenWebServicesModuleVersion>
+		<legacyUiOmodVersion>1.3.3</legacyUiOmodVersion>
+		<mailappenderVersion>0.92-SNAPSHOT</mailappenderVersion>
+		<metadataMappingVersion>1.3.1</metadataMappingVersion>
+		<metadataSharingVersion>1.2.2</metadataSharingVersion>
+		<operationTheaterVersion>1.2.1</operationTheaterVersion>
+		<providerManagementVersion>2.5.0</providerManagementVersion>
+		<rulesEngineVersion>0.92-SNAPSHOT</rulesEngineVersion>
+		<reportingVersion>1.16.0</reportingVersion>
+		<serializationVersion>0.2.12</serializationVersion>
+		<uicommonsModuleVersion>2.0</uicommonsModuleVersion>
+		<uiframeworkModuleVersion>3.8</uiframeworkModuleVersion>
+		<uilibraryVersion>2.0.5</uilibraryVersion>
+		<reportingRestVersion>1.10.0</reportingRestVersion>
+		<bahmniIEOmodVersion>1.1.0</bahmniIEOmodVersion>
+		<appointmentsVersion>1.3.0-SNAPSHOT</appointmentsVersion>
+		<emailNotificationVersion>1.0.0-SNAPSHOT</emailNotificationVersion>
+    <bahmniGroupId>org.bahmni.module</bahmniGroupId>
+  </properties>
 
-	<dependencyManagement>
-		<dependencies>
-			<dependency>
-				<groupId>org.openmrs.module</groupId>
-				<artifactId>webservices-rest</artifactId>
-				<version>${webservices.restVersion}</version>
-				<type>jar</type>
-			</dependency>
-			<dependency>
-				<groupId>org.openmrs.module</groupId>
-				<artifactId>owa</artifactId>
-				<version>${owaVersion}</version>
-				<type>jar</type>
-			</dependency>
-			<dependency>
-				<groupId>org.openmrs.module</groupId>
-				<artifactId>fhir2</artifactId>
-				<version>${fhirVersion}</version>
-				<type>jar</type>
-			</dependency>
-		</dependencies>
-	</dependencyManagement>
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>org.openmrs.module</groupId>
+        <artifactId>webservices-rest</artifactId>
+        <version>${webservices.restVersion}</version>
+        <type>jar</type>
+      </dependency>
+      <dependency>
+        <groupId>org.openmrs.module</groupId>
+        <artifactId>owa</artifactId>
+        <version>${owaVersion}</version>
+        <type>jar</type>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
 
-	<build>
-		<resources>
-			<resource>
-				<directory>.</directory>
-				<filtering>true</filtering>
-				<includes>
-					<include>openmrs-distro.properties</include>
-					<include>readme.txt</include>
-				</includes>
-			</resource>
-		</resources>
+  <build>
+    <resources>
+      <resource>
+        <directory>.</directory>
+        <filtering>true</filtering>
+        <includes>
+          <include>openmrs-distro.properties</include>
+          <include>readme.txt</include>
+        </includes>
+      </resource>
+    </resources>
 
-		<plugins>
-			<plugin>
-				<groupId>org.openmrs.maven.plugins</groupId>
-				<artifactId>openmrs-sdk-maven-plugin</artifactId>
-				<version>4.0.0</version>
-				<executions>
-					<execution>
-						<id>build-distro</id>
-						<phase>process-resources</phase>
-						<goals>
-							<goal>build-distro</goal>
-						</goals>
-						<configuration>
-							<distro>${project.build.outputDirectory}/openmrs-distro.properties</distro>
-							<dir>target/distro</dir>
-							<bundled>true</bundled>
-						</configuration>
-					</execution>
-				</executions>
-			</plugin>
-			<plugin>
-				<groupId>org.codehaus.mojo</groupId>
-				<artifactId>build-helper-maven-plugin</artifactId>
-				<version>3.0.0</version>
-				<executions>
-					<execution>
-						<id>attach-artifacts</id>
-						<phase>package</phase>
-						<goals>
-						  <goal>attach-artifact</goal>
-						</goals>
-						<configuration>
-						  <artifacts>
-							<artifact>
-							  <file>target/distro/web/openmrs.war</file>
-							  <type>war</type>
-							</artifact>
-						  </artifacts>
-						</configuration>
-					</execution>
-				</executions>
-			</plugin>
-		</plugins>
-	</build>
+    <plugins>
+      <plugin>
+        <groupId>org.openmrs.maven.plugins</groupId>
+        <artifactId>openmrs-sdk-maven-plugin</artifactId>
+        <version>4.0.0</version>
+        <executions>
+          <execution>
+            <id>build-distro</id>
+            <phase>process-resources</phase>
+            <goals>
+              <goal>build-distro</goal>
+            </goals>
+            <configuration>
+              <distro>${project.build.outputDirectory}/openmrs-distro.properties</distro>
+              <dir>target/distro</dir>
+              <bundled>true</bundled>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>build-helper-maven-plugin</artifactId>
+        <version>3.0.0</version>
+        <executions>
+          <execution>
+            <id>attach-artifacts</id>
+            <phase>package</phase>
+            <goals>
+              <goal>attach-artifact</goal>
+            </goals>
+            <configuration>
+              <artifacts>
+                <artifact>
+                  <file>target/distro/web/openmrs.war</file>
+                  <type>war</type>
+                </artifact>
+              </artifacts>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
 
-	<repositories>
-		<repository>
-			<id>openmrs-repo</id>
-			<name>OpenMRS Nexus Repository</name>
-			<url>https://mavenrepo.openmrs.org/nexus/content/repositories/public</url>
-		</repository>
-	</repositories>
+  <repositories>
+    <repository>
+      <id>openmrs-repo</id>
+      <name>OpenMRS Nexus Repository</name>
+      <url>https://mavenrepo.openmrs.org/nexus/content/repositories/public</url>
+    </repository>
+    <repository>
+      <id>repo.mybahmni.org</id>
+      <name>bahmni-artifactory-snapshots</name>
+      <url>http://repo.mybahmni.org.s3-website-ap-southeast-1.amazonaws.com/artifactory/snapshot</url>
+      <snapshots>
+        <updatePolicy>always</updatePolicy>
+      </snapshots>
+    </repository>
+    <repository>
+      <id>sonatype-nexus-snapshots</id>
+      <name>Sonatype Nexus Snapshots</name>
+      <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+      <releases>
+        <enabled>false</enabled>
+      </releases>
+      <snapshots>
+        <enabled>true</enabled>
+        <updatePolicy>interval:10080</updatePolicy>
+      </snapshots>
+    </repository>
+  </repositories>
 
-	<pluginRepositories>
-		<pluginRepository>
-			<id>openmrs-repo</id>
-			<name>OpenMRS Nexus Repository</name>
-			<url>https://mavenrepo.openmrs.org/nexus/content/repositories/public</url>
-			<snapshots>
-				<enabled>false</enabled>
-			</snapshots>
-		</pluginRepository>
-	</pluginRepositories>
+  <pluginRepositories>
+    <pluginRepository>
+      <id>openmrs-repo</id>
+      <name>OpenMRS Nexus Repository</name>
+      <url>https://mavenrepo.openmrs.org/nexus/content/repositories/public</url>
+      <snapshots>
+        <enabled>false</enabled>
+      </snapshots>
+    </pluginRepository>
+  </pluginRepositories>
 
-	<distributionManagement>
-		<repository>
-			<id>openmrs-repo-releases</id>
-			<name>OpenMRS Releases</name>
-			<url>https://mavenrepo.openmrs.org/nexus/content/repositories/releases</url>
-		</repository>
-		<snapshotRepository>
-			<id>openmrs-repo-snapshots</id>
-			<name>OpenMRS Snapshots</name>
-			<url>https://mavenrepo.openmrs.org/nexus/content/repositories/snapshots</url>
-		</snapshotRepository>
-	</distributionManagement>
+  <distributionManagement>
+    <repository>
+      <id>openmrs-repo-releases</id>
+      <name>OpenMRS Releases</name>
+      <url>https://mavenrepo.openmrs.org/nexus/content/repositories/releases</url>
+    </repository>
+    <snapshotRepository>
+      <id>openmrs-repo-snapshots</id>
+      <name>OpenMRS Snapshots</name>
+      <url>https://mavenrepo.openmrs.org/nexus/content/repositories/snapshots</url>
+    </snapshotRepository>
+  </distributionManagement>
 </project>
